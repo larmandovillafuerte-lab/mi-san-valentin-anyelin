@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Anyelin ❤️</title>
+
+<style>
+
+/* fondo */
+
+body{
+margin:0;
+padding:0;
+overflow:hidden;
+font-family:Arial;
+background:linear-gradient(45deg,#ff4b5c,#ff758c);
+}
+
+/* corazones */
+
+.heart{
+position:absolute;
+color:#ffd1dc;
+font-size:25px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-10vh);
+opacity:1;
+}
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+
+/* botón abrir */
+
+#boton{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+padding:20px 40px;
+font-size:30px;
+border:none;
+border-radius:15px;
+background:white;
+color:#ff4b5c;
+cursor:pointer;
+box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+/* carta */
+
+#carta{
+
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) scale(0);
+
+background:white;
+color:#333;
+
+padding:30px;
+
+border-radius:20px;
+
+width:80%;
+max-width:600px;
+
+box-shadow:0 0 30px rgba(0,0,0,0.5);
+
+transition:0.5s;
+
+}
+
+/* mostrar carta */
+
+#carta.show{
+
+transform:translate(-50%,-50%) scale(1);
+
+}
+
+h1{
+
+color:#ff4b5c;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- botón -->
+
+<button id="boton" onclick="abrir()">Abrir ❤️</button>
+
+<!-- carta -->
+
+<div id="carta">
+
+<h1>Para Anyelin ❤️</h1>
+
+<p>
+
+Mi amor, en este San Valentín quiero que sepas que no eres solo mi novia… eres el motivo por el que mi corazón late más fuerte cada mañana, la razón por la que sonrío sin darme cuenta cuando pienso en ti, y el lugar más bonito donde siempre quiero volver.
+
+</p>
+
+<p>
+
+Tus ojos me cuentan historias que nadie más entiende, tu risa ilumina hasta los días grises, y cada abrazo tuyo me recuerda que el amor de verdad existe y que, por suerte, lo encontré en ti.
+
+</p>
+
+<p>
+
+Gracias por ser mi todo, mi casualidad más perfecta.
+
+</p>
+
+<p>
+
+Te amo más de lo que las palabras pueden decir y hoy, más que nunca, celebro que seas mía. ❤️
+
+</p>
+
+<p>
+
+Feliz San Valentín, vida mía
+
+</p>
+
+<p>
+
+Att: Armando
+
+</p>
+
+</div>
+
+<!-- musica -->
+
+<audio id="musica" loop>
+
+<source src="musica.mp3" type="audio/mpeg">
+
+</audio>
+
+<script>
+
+/* abrir carta */
+
+function abrir(){
+
+document.getElementById("boton").style.display="none";
+
+document.getElementById("carta").classList.add("show");
+
+document.getElementById("musica").play();
+
+}
+
+/* crear corazones */
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.className="heart";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},5000);
+
+},300);
+
+</script>
+
+</body>
+
+</html>
